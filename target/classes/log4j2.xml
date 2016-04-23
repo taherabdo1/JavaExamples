@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="debug" name="MyApp" packages="">
+	<Appenders>
+		<RollingFile name="RollingFile" fileName="C:/logs/app.log"
+			filePattern="C:/logs/$${date:yyyy-MM}/app-%d{yyyy-MM-dd}-%i.log">
+			<PatternLayout>
+				<Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="10 KB" />
+			</Policies>
+		</RollingFile>
+		
+		<RollingFile name="RollingFile2" fileName="C:/logs2/app.log"
+			filePattern="C:/logs2/$${date:yyyy-MM}/app-%d{yyyy-MM-dd}-%i.log">
+			<PatternLayout>
+				<Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="10 KB" />
+			</Policies>
+		</RollingFile>
+		
+		<RollingFile name="RootRollingFile" fileName="C:/Rootlogs/app.log"
+			filePattern="C:/Rootlogs/$${date:yyyy-MM}/app-%d{yyyy-MM-dd}-%i.log">
+			<PatternLayout>
+				<Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="10 KB" />
+			</Policies>
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+		<Logger name="Log4JStudy.log4j2Policies.App" level="debug"  additivity="false">
+			<AppenderRef ref="RollingFile" />
+		</Logger>
+		<Logger name="Log4JStudy.log4j2Policies.App2" level="debug"  additivity="false">
+			<AppenderRef ref="RollingFile2" />
+		</Logger>
+		<Root level="debug">
+			<AppenderRef ref="RootRollingFile" />
+		</Root>
+	</Loggers>
+</Configuration>
