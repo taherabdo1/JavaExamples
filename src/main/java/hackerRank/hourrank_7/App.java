@@ -43,7 +43,7 @@ public class App {
 			int[] acc = new int[input.length];
 			int N = input.length;
 
-			// accumlative sum
+			// acc sum
 			acc[N - 1] = input[N - 1];
 			for (int i = N - 2; i >= 0; i--) {
 				acc[i] = input[i] + acc[i + 1];
