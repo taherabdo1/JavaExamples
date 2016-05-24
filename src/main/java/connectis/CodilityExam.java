@@ -1,11 +1,20 @@
 package connectis;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.List;
+import java.util.Map;
+import java.util.Vector;
+
 public class CodilityExam {
 
 	// get the max 24 based hour system from the input intgers (2,0,0,4)
 		// outputs---> 20:40
 		public  String getMaxHour(int A, int B, int C, int D) {
 
+//			List <Integer> list = new Vector();\
+//			StringBuilder sb = new StringBuilder();
 			int[] input = { A, B, C, D };
 			String result = "";
 			int max = -1;
@@ -119,7 +128,7 @@ public class CodilityExam {
 			if (counter != 0)
 				floorStops[0]++;
 
-			// count the stops from the floorStops
+			// count the stops from the floorStops up
 			for (int i = 0; i < floorStops.length; i++)
 				result += floorStops[i];
 
