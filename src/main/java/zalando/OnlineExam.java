@@ -1,13 +1,11 @@
 package zalando;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 public class OnlineExam {
 
-	// get the longest valide substring
+	// get the longest valid substring
 	public int solution1(String S) {
 		int result = -1;
 		boolean containsUppperCase = false;
@@ -62,7 +60,6 @@ public class OnlineExam {
 		int result = 0;
 		int start = 0;
 		int end = 0;
-		// int tempResult =0;
 		int barier = -1;
 		for (int i = 0; i < A.length -1; i++) {
 			// if the barrier deosn't set yet
