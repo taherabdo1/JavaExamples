@@ -25,10 +25,13 @@ public class PairsOfNumbersThatEqualValue {
 			}
 		}
 		for(Entry<Integer,Integer> entry : numbersRepeats.entrySet()){
+			int minimum = Integer.MAX_VALUE;
 			if((Integer)entry.getValue() != 0){
 				if(numbersRepeats.get(value - (Integer)entry.getKey()) != null && numbersRepeats.get(value - (Integer)entry.getKey()) != 0){
-					result+=1;
-					numbersRepeats.put((Integer) entry.getKey(), numbersRepeats.get(entry.getKey())-1);
+					minimum = Math.min(entry.getValue(), numbersRepeats.get(value - (Integer)entry.getKey()));
+					result+=minimum;
+					numbersRepeats.put((Integer) entry.getKey(), numbersRepeats.get(entry.getKey())-minimum);
+					numbersRepeats.put(value - entry.getKey(), numbersRepeats.get(entry.getKey())-minimum);
 				}				
 			}
 		}
